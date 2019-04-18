@@ -1,0 +1,23 @@
+following this site
+
+> http://www.linuxandubuntu.com/home/how-to-setup-a-web-server-and-host-website-on-your-own-linux-computer
+> https://hostadvice.com/how-to/how-to-install-apache-mysql-php-on-an-ubuntu-18-04-vps/
+
+
+-------------------------------------------------------------------------------
+prerequisites to setup web server
+*apache 2
+	open source HTTP server
+*php and php sqlite component
+	server side scripting language
+	component help to interact with backend mySQL database of our website
+*mySQL
+	data base for storing data
+--------------------------------------------------------------------------------
+apache2 web server
+>is a web server used to serve web page requested by client computers
+>user enters a Uniform Resource Locator(URL) to point a webserver by means of its Fully Qualified Domain Name (FQDN)
+e.g. FQDN -> www.ubuntu.com
+>most common protocol used to transfer web pages is Hyper Text Transfer Protocol (HTTP), Hyper Text Transfer Protocol over Secure Sockets Layer(HTTPs), and File Transfer Protocol(FTP), are supported  
+>Apache Web Servers are often used in combination with the MySQL database engine, the HyperText Preprocessor (PHP) scripting language, and other popular scripting languages such as Python and Perl. This configuration is termed LAMP (Linux, Apache, MySQL and Perl/Python/PHP) and forms a powerful and robust platform for the development and deployment of Web-based applications.
+

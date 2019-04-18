@@ -1,0 +1,17 @@
+sudo apt-get install apache2 //install apache
+sudo service apache2 restart //restart server
+sudo apt-get install mysql-server php5-mysql 
+/*/sudo mysql_secure_installation //to secure your server
+sudo mysql -uroot	//to check if mySQL is installed properly
+sudo mysql -uroot -p	//if set password during installation check with this command
+sudo apt-get install php libapache2-mod-php//to install php and php5-mysql
+
+//testing PHP
+sudo nano /var/www/html/info.php and copy paste code below
+<?php 
+ phpinfo();
+ ?>
+ 
+sudo systemctl restart apache2 //restart apache
+
+//check ipaddress/info.php in browser
