@@ -4,7 +4,16 @@ sudo apt-get install mysql-server php-mysql
 /*/sudo mysql_secure_installation //to secure your server
 sudo mysql -uroot	//to check if mySQL is installed properly
 sudo mysql -uroot -p	//if set password during installation check with this command
-sudo apt-get install php libapache2-mod-php//to install php and php5-mysql
+
+//in case you need to update plugins and flush privileges enter following commands:
+sudo mysql -uroot
+use mysql
+update user set plugin='' where User='root'
+flush privileges
+exit
+
+//to install php and php-mysql
+sudo apt-get install php libapache2-mod-php
 
 //testing PHP
 sudo nano /var/www/html/info.php and copy paste code below
