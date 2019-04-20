@@ -1,6 +1,6 @@
 sudo apt-get install apache2 //install apache
 sudo service apache2 restart //restart server
-sudo apt-get install mysql-server php5-mysql 
+sudo apt-get install mysql-server php-mysql 
 /*/sudo mysql_secure_installation //to secure your server
 sudo mysql -uroot	//to check if mySQL is installed properly
 sudo mysql -uroot -p	//if set password during installation check with this command
