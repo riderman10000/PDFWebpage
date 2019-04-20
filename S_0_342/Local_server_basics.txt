@@ -1,0 +1,29 @@
+1. Hosting a Local Server
+
+1.1 Getting Started with Apache server:
+
+Addresses on the Web are expressed with Uniform Resource Locators (URLs) which specify:-
+http.www.apache.org/docs/current/getting-started.html?arg=value
+format: protocol.servername/URL-path/query-string 
+(additional; to pass additional arguments to the server)
+
+The URL-path may represent any number of things on the server:- 
+file (e.g.: getting-started.html),
+a handler (e.g.: server-status) 
+or some kind of program file (e.g.: index.php)
+
+The server will send a response containing a status code and, optionally, a response body.
+Status code => whether the request was successful, and, if not, type of error condition. This tells the client what it should do with the response.
+
+In order to connect to a server, the client will first have to resolve the server name to an IP address  (the location on the Internet where the server resides). 
+Thus, for our web server to be reachable, it is necessary that the server name be in DNS (Domain Name System).
+
+Virtual host => method of hosting multiple domain names (host names) with separate handling of each name on a same physical server or pool of servers.
+
+Website content => may be static or dynamic
+static content :- site has fixed content like HTML files, image files, CSS files and other files within the filesystem specified by DocumentRoot directive followed by directory path (eg:- DocumentRoot “/usr/local/apache/htdocs”).
+Every page will have the code written separately and needs to be saved separately on the server directory. Changes have to be made manually every time which is time consuming and requires coding skills.
+
+Dynamic content :- site has dynamic contents like templates, contents, scripts generated at request time and may change from one request to another which is controlled by an application server controlled by server-side scripting. Client-side scripting only brings changes on client’s PC. 
+Pages don’t actually exist what does exist is design or template which governs the structure of the site. It  is saved separately from the corresponding content of the site. Each time we make request the content is changed while the template remains unchaged. Various handlers (eg:- mod_actions, mod_status,etc) are used to generate the content by writing Common Gateway Interface(CGI) programs.
+Handler is an internal Apache representation of the action to be performed when a file is called and CGI defines the way in which the wab server interacts with external content-generating programs called CGI programs.
