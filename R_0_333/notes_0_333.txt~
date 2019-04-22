@@ -2,8 +2,8 @@ following this site
 
 > http://www.linuxandubuntu.com/home/how-to-setup-a-web-server-and-host-website-on-your-own-linux-computer
 > https://hostadvice.com/how-to/how-to-install-apache-mysql-php-on-an-ubuntu-18-04-vps/
-
-
+>https://commotionwireless.net/docs/cck/networking/learn-networking-basics/
+>https://commotionwireless.net/docs/cck/networking/learn-wireless-basics/
 -------------------------------------------------------------------------------
 prerequisites to setup web server
 *apache 2
@@ -14,10 +14,55 @@ prerequisites to setup web server
 *mySQL
 	data base for storing data
 --------------------------------------------------------------------------------
-apache2 web server
+$ apache2 web server
 >is a web server used to serve web page requested by client computers
 >user enters a Uniform Resource Locator(URL) to point a webserver by means of its Fully Qualified Domain Name (FQDN)
 e.g. FQDN -> www.ubuntu.com
 >most common protocol used to transfer web pages is Hyper Text Transfer Protocol (HTTP), Hyper Text Transfer Protocol over Secure Sockets Layer(HTTPs), and File Transfer Protocol(FTP), are supported  
 >Apache Web Servers are often used in combination with the MySQL database engine, the HyperText Preprocessor (PHP) scripting language, and other popular scripting languages such as Python and Perl. This configuration is termed LAMP (Linux, Apache, MySQL and Perl/Python/PHP) and forms a powerful and robust platform for the development and deployment of Web-based applications.
 
+$ Clients and Servers
+A server is a computer that holds content and services such as a website, a media file, or a chat application. The server holds these data and sends it out when requested.
+
+A client is a different computer, such as laptop or cell phone, that request to view, download, or use content. The client can connect over a network to exchange information.
+
+example (easy)
+client: radio receiver
+server: radio station
+
+$ IP Addresses
+
+-to send and direct data across a network, computers need to be able to identify destinations and origins. This identification is an IP- Internet Protocol-address.
+-is a set of four number ranging between 1-255, separated by dots.
+example 127.0.0.1
+
+-there are different classifications, or types of IP addresses. A network can be public, or it can be private. Public IP address are accessible anywhere on the internet. Private IP addresses are not, and most are typically hidden a device with a public IP address.
+
+$ Network Hubs and Switches
+
+-Traditionally, computers are connected to each other using cables—creating a network. The cable used most often is Ethernet, which consists of four pairs of wires inside of a plastic jacket. It is physically similar to phone cables, but can transport much more data.
+-cables donot make a good network so used a network hub, where all the computer are connected to single hub
+-network may slow down using hub if many computer try to send messege at the same time and confuse the hub.
+-solutin to the problem is to use switch, which sends the message to the intended destination.
+-Switches do have a limitation though—they only know about the addresses of equipment that is plugged directly into them. So, you can only send messages to a small number of devices—however many ports the switch has! If you need to send a message to a computer on another network, it will need to be sent through a router, which we discuss next.
+
+$ Routers and Firewalls
+
+-Routers do the majority of the hard work on a network - they make the decisions about all the messages that travel on the network, and whether to pass messages to and from outside networks.
+-there are three main functions:
+	a.separate and bridge
+		-routers separate networks into sections, or bridge different networks 		together, the private network 192.168.1.71 (or any device in a private network) is bridged to the internet with a public IP address.
+	b.Assign IPs
+		- they assign IP addresses to device connected to them. In the case of routers, they assign IP address using DHCP- Dynamic Host Configuration Protocol
+	c.Firewll and protect
+		-They can filter messages or keep users out of private networks. Most routers have a Firewall built in. This is a software function that keeps unwanted messages from reaching the computers on the inside, or private part, of the network.
+		
+		
+$ Wireless Signals
+-Wireless signals are electromagnetic waves travelling through the air. These are formed when electric energy travels through a piece of metal -- for example a wire or antenna -- and waves are formed around that piece of metal. These waves can travel some distance depending on the strength of that energy.
+
+$ types of wireless signals
+a.frequency
+	- wireless signals occupy a spectrum, or wide range, of frequencies: the rate at which a signal vibrates. If the signal vibrates very slowly, it has a low frequency. If the signal vibrates very quickly, it has a high frequency. Frequency is measured in Hertz, which is the count of how quickly a signal changes every second. As an example, FM radio signals vibrate around 100 million times every second! Since communications signals are often very high in frequency, we abbreviate the measurements for the frequencies - millions of vibrations a second is Megahertz (MHz), and billions of vibrations a second is Gigahertz (GHz). One thousand Megahertz is one Gigahertz.
+b.modulation
+	- wireless signals can be different in the way they convey information. A wireless signal needs to be modulated--or changed--to send information. There are many types of modulation, and different technologies can use one or more types to send and receive information. In the two examples below -- AM and FM radio -- the M stands for modulation. The type of modulation is what makes them different.
