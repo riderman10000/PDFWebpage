@@ -27,3 +27,5 @@ Every page will have the code written separately and needs to be saved separatel
 Dynamic content :- site has dynamic contents like templates, contents, scripts generated at request time and may change from one request to another which is controlled by an application server controlled by server-side scripting. Client-side scripting only brings changes on client’s PC. 
 Pages don’t actually exist what does exist is design or template which governs the structure of the site. It  is saved separately from the corresponding content of the site. Each time we make request the content is changed while the template remains unchaged. Various handlers (eg:- mod_actions, mod_status,etc) are used to generate the content by writing Common Gateway Interface(CGI) programs.
 Handler is an internal Apache representation of the action to be performed when a file is called and CGI defines the way in which the wab server interacts with external content-generating programs called CGI programs.
+
+this is example thhthtisdf;askdjf;laksdjf
