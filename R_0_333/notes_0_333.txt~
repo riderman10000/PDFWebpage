@@ -1,9 +1,22 @@
 following this site
 
-> http://www.linuxandubuntu.com/home/how-to-setup-a-web-server-and-host-website-on-your-own-linux-computer
-> https://hostadvice.com/how-to/how-to-install-apache-mysql-php-on-an-ubuntu-18-04-vps/
->https://commotionwireless.net/docs/cck/networking/learn-networking-basics/
->https://commotionwireless.net/docs/cck/networking/learn-wireless-basics/
+1> http://www.linuxandubuntu.com/home/how-to-setup-a-web-server-and-host-website-on-your-own-linux-computer
+2> https://hostadvice.com/how-to/how-to-install-apache-mysql-php-on-an-ubuntu-18-04-vps/
+3>https://commotionwireless.net/docs/cck/networking/learn-networking-basics/
+4>https://commotionwireless.net/docs/cck/networking/learn-wireless-basics/
+5>https://www.hostinger.com/tutorials/what-is-apache
+6>https://httpd.apache.org/docs/2.4/howto/
+7>https://www.techopedia.com/definition/5355/firewall
+8>https://httpd.apache.org/docs/2.4/vhosts/
+9>https://www.linode.com/docs/web-servers/apache-tips-and-tricks/apache-configuration-basics/
+--------------------------------------------------------------------------------
+Hints:
+the main Apache server configuration file is in /etc/apache2/apache2.conf.  It contains the
+configuration directives that give the server its instructions.
+See http://httpd.apache.org/docs/2.4/ for detailed information about
+the directives and /usr/share/doc/apache2/README.Debian about Debian specific
+hints.
+
 -------------------------------------------------------------------------------
 prerequisites to setup web server
 *apache 2
@@ -66,3 +79,80 @@ a.frequency
 	- wireless signals occupy a spectrum, or wide range, of frequencies: the rate at which a signal vibrates. If the signal vibrates very slowly, it has a low frequency. If the signal vibrates very quickly, it has a high frequency. Frequency is measured in Hertz, which is the count of how quickly a signal changes every second. As an example, FM radio signals vibrate around 100 million times every second! Since communications signals are often very high in frequency, we abbreviate the measurements for the frequencies - millions of vibrations a second is Megahertz (MHz), and billions of vibrations a second is Gigahertz (GHz). One thousand Megahertz is one Gigahertz.
 b.modulation
 	- wireless signals can be different in the way they convey information. A wireless signal needs to be modulated--or changed--to send information. There are many types of modulation, and different technologies can use one or more types to send and receive information. In the two examples below -- AM and FM radio -- the M stands for modulation. The type of modulation is what makes them different.
+	
+Wi-Fi signals 
+
+there are two types:
+1. 2.4GHz
+	- low frequency, common wi-fi tech, signals can become more crowded and interfere with each other
+	-can pass through walls and windows fairly well.
+2. 5GHz
+	-higher frequency, implemented by fewer device, frequencies are less crowded so achieve very fast, cannot pass through wall and windows, have short range.
+(read furthur on link no. 3 and 4   )
+
+$ Fire wall
+	A firewall is a network security system that monitors and controls over all your incoming and outgoing network traffic based on advanced and a defined set of security rules
+	-is a program that prevent unauthorized access to or from a private network
+	-isolate your computer from the internet using wall of code that inspect each individual packet of data
+
+$ CGI(the Common Gateway Interface)
+-a standard way for exchanging  information(includes document contentm type(e.g. HTML, PDF, or plain text e.t.c.)): CGI (the Common Gateway Interface, as it defines a common way for server software to interface with scripts).
+Webpage generating programs invoked by server software that operate according to the CGI standard are known as CGI scripts.
+-An early use of CGI scripts was to process forms. 
+In the beginning of HTML, HTML forms typically had an "action" attribute and a button designated as the "submit" button. 
+When the submit button is pushed the URI(Uniform Resource Identifier) specified in the "action" attribute would be sent to the server with the data from the form sent as a query string. 
+If the "action" specifies a CGI script then the CGI script would be executed and it then produces an HTML page.
+
+$ Virtual Host
+-refers to the practice of running more than one website(such as company1.example.com and company2.example.com) on a single machine.
+-virtual host can be "IP-based" or "name-based"
+-the fact that multiple website are running on the same physical server is not apparent to the end user.
+-apache supports both IP & name based Vhosts(virtual hosts).
+-the latter variant of virtual hosts is sometime also called host-based or non-ip virtual hosts.
+
+
+a. Name-based vhosts
+- the server relies on the client to report the hostname as part of the HTTP header. In this technique, many different hosts can share the same ip address.
+-usually simpler, need only configuration of our DNS server to map each hostname to the correct IP address and then configure apache HTTP server to recognize the different hostnames.
+
+b. IP-based vhosts
+-use the ip address of the connection to determine the correct virtual host to serve. therefore need to have separate ip address for each host.
+
+--------------------------------------------------------------------------------
+
+default configuration of apache varies significantly between various distributionn of linux.
+Debian and ubuntu refere to apache as "Apache2" and 
+place the configuration files in the /etc/apache2/ directory.
+other distro, including Fedora, CentOS and Arch Linux refer to Apache as "httpd" and 
+store configuration files in /etc/httpd/ .
+
+To administer basic Apache functionality we can use "init" scripts, which allows us
+-- safe and easy way to start, stop and restart the server.
+-- allows us to reload the configuration and check the status of the server.
+
+to access these functions, issue the appropriate command
+
+/etc/init.d/apache2 start
+/etc/init.d/apache2 stop
+/etc/init.d/apache2 restart
+/etc/init.d/apache2 reload
+/etc/init.d/apache2 status
+
+for other distro just change apache2 with httpd.
+for some distro the path may be /etc/rc.d/init.d/apache2
+
+additional functionality from CLI to check syntax of apache config. files without needing to restart the server and test ny the command
+# apache2ctl -t (for debian and ubuntu)
+# httpd -t (for CentOS and Fedora)
+these command provide a report on  currently running virtual hosts, containing the port that the host is listening on , the name of the virtual host(i.e. the doamin), the information about the location of the site's configuration settings including file names and line numbers.
+-master configuration file for apache is located in the httpd.conf
+(in debian located in apache2.conf file)
+
+following command can give list of above file
+Note: the order in which these files are included can affect the behavior of the web serve. if later options contradict options set in earlier files, the later options override earlier options. Familiarizing with the existing default configuration can be a helpful learning experience  
+grep "Include" /etc/apache2/apache2.conf (debians)
+grep "Include" /etc/apache2/httpd.conf
+grep "Include" /etc/httpd/httpd.conf
+
+
+

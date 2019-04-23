@@ -1,13 +1,10 @@
 <html>
-<head>
-<title> THAPATHALI GANGSTA </title>
-
-<body>
-<h1> THAPATHALI CAMPUS
-<?php
-echo "hello world";
-echo "gang";
-?>
-
-</body>
+ <body>
+  <form action="add.cgi" method="POST">
+   Enter two numbers to add:<br />
+   First Number: <input type="text" name="num1" /><br />
+   Second Number: <input type="text" name="num2" /><br />
+   <input type="submit" value="Add" />
+  </form>
+ </body>
 </html>
