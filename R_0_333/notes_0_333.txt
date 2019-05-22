@@ -154,5 +154,19 @@ grep "Include" /etc/apache2/apache2.conf (debians)
 grep "Include" /etc/apache2/httpd.conf
 grep "Include" /etc/httpd/httpd.conf
 
+-------------------------------------------------------------
+PHP (personal home page)
+
+- ability to interface with database
+-manipulate form information
+-create pages dynamically
+-create and manipulate Adobe Flash and Portable Document Format (P.D.F.) files
+-evaluate a password for guessability by comparing it to language dictionaries and easily broken patterns
+-parse even the most complex of string using POSIX and Perl-based regular expression libraries
+-Authenticate users against login credentials stored in flat files, databases and even Microsoft's Active Directiory
+-communicate with a wide variety of protocols, including LDAP, IMAP, POP3, NNTP, and DNS, among others.
+Tightly integrate with a wide array of credit-card processing soltions.
+
+Native support is offered for more than 25 database products, including Adabas D, dbase, Empress, FilePro, FrontBase, Hyperwave, IBM DB2, Informix, Ingres, InterBase, mSQL, Microsoft SQL Server, MySQL, Oracle, Ovrimos, PostgreSQL, Solid, Sybase, Unix dbm, and Velocis .. (need to update this list with current time)
 
 
