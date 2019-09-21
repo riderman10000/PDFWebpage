@@ -1,0 +1,10 @@
+$: mysql -u root -p -h localhost
+mysql> CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
+mysql> CREATE DATABASE dataBaseName;
+//mysql> GRANT privilege_name PRIVILEGES ON  *.* TO 'username'@'localhost';
+mysql> GRANT privilege_name ON object_name TO {user_name|public|role_name} [WITH GRANT OPTION];
+#privilege_name: ALL, EXECUTE, SELECT
+#object_name: TABLE, VIEW, STORED PROC and SEQUENCE
+
+example
+mysql> GRANT ALL ON TABLE *.* TO spiderman@localhost;
